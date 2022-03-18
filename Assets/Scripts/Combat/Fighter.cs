@@ -13,7 +13,7 @@ namespace RPG.Combat
         [SerializeField] float weaponDamage = 5f;
 
         Health target;
-        float timeSinceLastAttack = 0;
+        float timeSinceLastAttack = Mathf.Infinity;
         private void Update()
         {
             timeSinceLastAttack += Time.deltaTime;
@@ -33,20 +33,27 @@ namespace RPG.Combat
 
         private void AttackBehaviour()
         {
-            if(timeSinceLastAttack > timeBetweenAttacks)
+            transform.LookAt(target.transform);
+            if (timeSinceLastAttack > timeBetweenAttacks)
             {
                 //this will trigger the Hit() event.
-
-                GetComponent<Animator>().SetTrigger("attack");
+                TriggerAttack();
                 timeSinceLastAttack = 0;
-                
+
             }
-            
+
+        }
+
+        private void TriggerAttack()
+        {
+            GetComponent<Animator>().ResetTrigger("stopAttack");
+            GetComponent<Animator>().SetTrigger("attack");
         }
 
         //Animation Event
         void Hit()
         { 
+            if(target == null) { return; }
             target.TakeDamage(weaponDamage);
         }
 
@@ -55,19 +62,32 @@ namespace RPG.Combat
             return Vector3.Distance(transform.position, target.transform.position) < weaponRange;
         }
 
-        public void Attack(CombatTarget combatTarget)
+        public void Attack(GameObject combatTarget)
         {
             GetComponent<ActionScheduler>().StartAction(this);
             target = combatTarget.GetComponent<Health>();
+            
+        }
+
+        public bool CanAttack(GameObject combatTarget)
+        {
+            if (combatTarget == null) { return false; }
+            Health targetToTest = combatTarget.GetComponent<Health>();
+            return targetToTest != null && !targetToTest.IsDead();
         }
 
         public void Cancel()
         {
-            GetComponent<Animator>().SetTrigger("setAttack");
+            StopAttack();
             target = null;
         }
 
-        
+        private void StopAttack()
+        {
+            GetComponent<Animator>().ResetTrigger("attack");
+            GetComponent<Animator>().SetTrigger("stopAttack");
+        }
+
     }
 }
 

@@ -10,13 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 8196697675836667564}
   - component: {fileID: 7194369426698761440}
-  - component: {fileID: 5066929581514516434}
-  - component: {fileID: 2130973704}
-  - component: {fileID: 2130973705}
-  - component: {fileID: 2130973700}
-  - component: {fileID: 5563202981747833783}
-  - component: {fileID: 7535516462819836695}
-  - component: {fileID: 6927920130596615802}
+  - component: {fileID: 1172905976}
+  - component: {fileID: 1172905977}
+  - component: {fileID: 7806228419900559246}
+  - component: {fileID: 3125957438692005694}
+  - component: {fileID: 7346836368589747626}
+  - component: {fileID: 3307795589981818629}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -75,7 +74,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &5066929581514516434
+--- !u!114 &1172905976
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -84,26 +83,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5401972681186859721}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35ae4dd3b6485164590a68e0347733ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponRange: 2
-  timeBetweenAttacks: 1
-  weaponDamage: 5
---- !u!114 &2130973704
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5401972681186859721}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50c1f35d6932aca438f726bbaf3d6233, type: 3}
+  m_Script: {fileID: 11500000, guid: 89becfb712bc92440b14f98c069a05d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
---- !u!195 &2130973705
+--- !u!195 &1172905977
 NavMeshAgent:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,7 +109,7 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!95 &2130973700
+--- !u!95 &7806228419900559246
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -135,7 +119,7 @@ Animator:
   m_GameObject: {fileID: 5401972681186859721}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: d288a0e4a2d923b46898986e979da643, type: 3}
-  m_Controller: {fileID: 9100000, guid: 56119d6e640a0844e83cb4a537f11eea, type: 2}
+  m_Controller: {fileID: 9100000, guid: 901730e1bb55f7c4d9daa34f4194c1d4, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -144,7 +128,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &5563202981747833783
+--- !u!114 &3125957438692005694
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -153,10 +137,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5401972681186859721}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5599409060fe0a94bab4e6db748020d5, type: 3}
+  m_Script: {fileID: 11500000, guid: 9ed0630d0160f35439dffb044c3ae874, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7535516462819836695
+  weaponRange: 2
+  timeBetweenAttacks: 1
+  weaponDamage: 5
+--- !u!114 &7346836368589747626
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -165,10 +152,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5401972681186859721}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1205ecd750cdee245b5d738f6851b1f0, type: 3}
+  m_Script: {fileID: 11500000, guid: fb29fb4cdd4c5e14cb59027fb88888fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6927920130596615802
+--- !u!114 &3307795589981818629
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -177,7 +164,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5401972681186859721}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e3b709bf2ab3b348b6c477b2d77db36, type: 3}
+  m_Script: {fileID: 11500000, guid: f681b2338b2fccc428a8e51d8f2adc5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
